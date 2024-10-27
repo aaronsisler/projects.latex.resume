@@ -1,0 +1,134 @@
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+
+% Change the page layout if you need to
+\geometry{left=1.1cm,right=1.1cm,top=1.25cm,bottom=1.25cm,columnsep=1.25cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Lato}
+\else
+  % If using pdflatex:
+  \usepackage[default]{lato}
+\fi
+
+% Setting the color theme of the document
+\input{theme/color.tex}
+
+\renewcommand{\cvItemMarker}{{\small\textbullet}}
+\renewcommand{\cvRatingMarker}{\faCircle}
+\renewcommand{\cvDateMarker}{\faCalendar*[regular]}
+\renewcommand{\cvLocationMarker}{\faMapMarker*}
+
+\begin{document}
+
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+\AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
+
+% FIrst Page: START
+
+% Header: START
+
+\begin{paracol}{2}
+  
+  \input{content/header-name}
+  \makeheadername
+  
+  \switchcolumn
+  
+  \input{content/personal-info}
+  \makepersonalinfo
+  
+\end{paracol}
+
+% Header: END
+
+% Body: START
+
+\begin{paracol}{2}
+
+% SECTION: Experience: START
+
+\sectionTitle{Experience}
+\input{content/experience}
+\sectionEnd
+
+% SECTION: Experience: END
+
+\switchcolumn
+
+% SECTION: Life Philosophy: START
+
+\sectionTitle{Life Philosophy}
+\input{content/life-philosophy}
+\sectionEnd
+
+% SECTION: Life Philosophy: END
+
+% SECTION: Most Proud of: START
+
+\sectionTitle{Most Proud of}
+\input{content/most-proud-of}
+\sectionEnd
+
+% SECTION: Most Proud of: END
+
+% SECTION: Languages: START
+
+\sectionTitle{Tech Skills}
+\input{content/tech-skills}
+\sectionEnd
+
+% SECTION: Languages: END
+
+% SECTION: Strengths: START
+
+\sectionTitle{Strengths}
+  \input{content/strengths}
+\sectionEnd
+
+% SECTION: Strengths: END
+
+% SECTION: Education: START
+
+\sectionTitle{Education}
+\input{content/education}
+\sectionEnd
+
+% SECTION: Education: END
+
+% SECTION: A Day of My Life: START
+
+% \sectionTitle{A Day In The Life}
+% \input{content/a-day-in-the-life.tex}
+% \sectionEnd
+
+% SECTION: A Day of My Life: END
+
+\switchcolumn
+
+% FIrst Page: END
+
+% Second Page: START
+
+\pagebreak
+
+% SECTION: Experience: START
+
+\sectionTitle{Experience: Cont.}
+\input{content/experience-cont}
+\sectionEnd
+
+% SECTION: Experience: END
+
+
+\end{paracol}
+
+% Body: END
+
+\end{document}

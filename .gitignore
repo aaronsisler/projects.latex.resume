@@ -1,0 +1,11 @@
+.DS_Store
+
+# Ignoring generated files
+*.aux
+*.bcf
+*.bck
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.xmpi
